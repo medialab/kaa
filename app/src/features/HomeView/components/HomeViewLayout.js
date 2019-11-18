@@ -20,13 +20,15 @@ import React from 'react';
 
  const HomeViewLayout = ( {
   actions: {
-    requestTestData
+    requestTestData,
+    setInterfaceColor
   },
   testData,
-  clientStatus
+  clientStatus,
+  interfaceColor = 'black',
  } ) => {
    return (
-     <div>
+     <div style={{color: interfaceColor}}>
        <h1>Hello world !</h1>
        <p>
          <button onClick={ () => requestTestData() }>Get test data</button>
@@ -45,6 +47,15 @@ import React from 'react';
           </pre>
          </div>
        }
+      <div>
+        <p>
+          Interface color :
+          <button onClick={() => setInterfaceColor('black')}>black</button>
+          <button onClick={() => setInterfaceColor('blue')}>blue</button>
+          <button onClick={() => setInterfaceColor('green')}>green</button>
+
+        </p>
+      </div>
      </div>
    );
  };

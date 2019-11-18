@@ -18,7 +18,7 @@ import {getTestData} from '../../helpers/client';
 /**
  * ui
  */
-const SET_HAS_REQUESTED = 'SET_HAS_REQUESTED';
+const SET_INTERFACE_COLOR = 'SET_INTERFACE_COLOR';
 const REQUEST_DATA = 'REQUEST_DATA';
 
 /**
@@ -30,8 +30,8 @@ const REQUEST_DATA = 'REQUEST_DATA';
  * ACTION CREATORS
  * ===================================================
  */
-export const setHasRequested = ( payload ) => ( {
-  type: SET_HAS_REQUESTED,
+export const setInterfaceColor = ( payload ) => ( {
+  type: SET_INTERFACE_COLOR,
   payload,
 } );
 
@@ -66,7 +66,7 @@ function ui( state = UI_DEFAULT_STATE, action ) {
   const { payload } = action;
   let propName;
   switch ( action.type ) {
-    case SET_HAS_REQUESTED:
+    case SET_INTERFACE_COLOR:
       propName = getStatePropFromActionSet( action.type );
       return {
         ...state,
@@ -134,7 +134,7 @@ export default combineReducers( {
  * ===================================================
  */
 
-const hasRequested = ( state ) => state.ui.hasRequested;
+const interfaceColor = ( state ) => state.ui.interfaceColor;
 const clientStatus = ( state ) => state.ui.clientStatus;
 const testData = ( state ) => state.data.testData;
 
@@ -143,7 +143,7 @@ const testData = ( state ) => state.data.testData;
  * @type {object}
  */
 export const selector = createStructuredSelector( {
-  hasRequested,
+  interfaceColor,
   clientStatus,
   testData,
 } );
