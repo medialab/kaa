@@ -12,6 +12,7 @@ node_modules
 # bundles and builds
 app/build
 dist
+build
 python_build
 python_scripts/__pycache__
 app/electronBuild
