@@ -1,0 +1,23 @@
+
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# mac files
+.DS_Store
+
+# bundles and builds
+app/build
+dist
+python_build
+python_scripts/__pycache__
+app/electronBuild
+entry.spec
+
+#config
+config/custom-environment-variables.json
+config/default.json
+config/production.json
