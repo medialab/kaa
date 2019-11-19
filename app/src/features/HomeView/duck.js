@@ -8,7 +8,7 @@ import { combineReducers } from 'redux';
 import { createStructuredSelector } from 'reselect';
 import { getStatePropFromActionSet } from '../../helpers/reduxUtils';
 
-import {getTestData} from '../../helpers/client';
+import { getTestData } from '../../helpers/client';
 
 /**
  * ===================================================
@@ -35,11 +35,11 @@ export const setInterfaceColor = ( payload ) => ( {
   payload,
 } );
 
-export const requestTestData = (payload) => ({
+export const requestTestData = ( payload ) => ( {
   type: REQUEST_DATA,
   payload,
   promise: () => getTestData()
-})
+} );
 
 /**
  * ===================================================
@@ -76,22 +76,22 @@ function ui( state = UI_DEFAULT_STATE, action ) {
       return {
         ...state,
         clientStatus: 'pending'
-      }
+      };
     case `${REQUEST_DATA}_ERROR`:
       return {
         ...state,
         clientStatus: 'error'
-      }
+      };
     case `${REQUEST_DATA}_SUCCESS`:
       return {
           ...state,
           clientStatus: 'success'
-        }
-    case `${REQUEST_DATA}_SUCCESS`:
+        };
+    case `${REQUEST_DATA}_RESET`:
         return {
             ...state,
             clientStatus: 'inactive'
-          }
+          };
     default:
       return state;
   }
@@ -114,7 +114,7 @@ function data( state = DATA_DEFAULT_STATE, action ) {
       return {
         ...state,
         testData: result
-      }
+      };
     default:
       return state;
   }

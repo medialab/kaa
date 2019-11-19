@@ -28,34 +28,34 @@ import React from 'react';
   interfaceColor = 'black',
  } ) => {
    return (
-     <div style={{color: interfaceColor}}>
+     <div style={ { color: interfaceColor } }>
        <h1>Hello world !</h1>
        <p>
          <button onClick={ () => requestTestData() }>Get test data</button>
        </p>
        <p>
-        <i>Client status : {clientStatus}</i>
+         <i>Client status : {clientStatus}</i>
        </p>
        {
          testData &&
          <div>
            <h2>Data:</h2>
-          <pre>
-            <code>
-              {JSON.stringify( testData )}
-            </code>
-          </pre>
+           <pre>
+             <code>
+               {JSON.stringify( testData )}
+             </code>
+           </pre>
          </div>
        }
-      <div>
-        <p>
-          Interface color :
-          <button onClick={() => setInterfaceColor('black')}>black</button>
-          <button onClick={() => setInterfaceColor('blue')}>blue</button>
-          <button onClick={() => setInterfaceColor('green')}>green</button>
+       <div>
+         <p>
+           <span>Interface color :</span>
+           <button onClick={ () => setInterfaceColor( 'black' ) }>black</button>
+           <button onClick={ () => setInterfaceColor( 'blue' ) }>blue</button>
+           <button onClick={ () => setInterfaceColor( 'green' ) }>green</button>
 
-        </p>
-      </div>
+         </p>
+       </div>
      </div>
    );
  };

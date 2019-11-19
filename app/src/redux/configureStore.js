@@ -14,7 +14,7 @@ import { connectRouter, routerMiddleware } from 'connected-react-router';
 import rootReducer from './rootReducer';
 import promiseMiddleware from './promiseMiddleware';
 
-const basename = `/`;
+const basename = '/';
 
 const history = createBrowserHistory( {
   basename
