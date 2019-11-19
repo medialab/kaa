@@ -12,16 +12,13 @@
   "main": "main_process.js",
   "scripts": {
     "dev": "NODE_ENV=development npm-run-all --parallel private:bundle private:serve",
-
     "lint": "eslint app/src; eslint services",
     "lint:fix": "eslint app/src --fix; eslint services --fix",
-
     "pack": "npm run private:compile;run-s private:build:all",
     "pack:linux": "run-s private:clean private:compile private:build:linux",
     "pack:mac": "run-s private:clean private:compile private:build:mac",
     "pack:old": "run-s private:clean private:compile private:build:all",
     "pack:win": "run-s private:clean private:compile private:build:win",
-
     "private:build:python": "pyinstaller python_scripts/entry.py  --distpath python_build",
     "private:build:all": "npm run private:build:icons;electron-builder -mwl",
     "private:build:icons": "./node_modules/.bin/electron-icon-maker --input=./assets/icon.png --output=./assets/;node flattenIcons",
@@ -39,7 +36,9 @@
   "build": {
     "productName": "kaa",
     "appId": "com.electron.kaa",
-    "extraFiles": ["python_build"],
+    "extraFiles": [
+      "python_build"
+    ],
     "linux": {
       "target": "tar.gz",
       "synopsis": "An electron seed",
